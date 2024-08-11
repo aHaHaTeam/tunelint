@@ -4,6 +4,7 @@
         IEquatable<Interval> {
     private readonly int _value;
 
+    public int Size => _value;
     public Interval(int value) =>
         _value = value;
 

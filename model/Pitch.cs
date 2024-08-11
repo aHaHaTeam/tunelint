@@ -1,5 +1,5 @@
 ﻿namespace tunelint.model {
-  internal class Pitch :
+  public class Pitch :
         IComparable<Pitch>,
         IEquatable<Pitch> {
     private readonly int _value;
@@ -8,39 +8,41 @@
         _value = value;
 
     public int CompareTo(Pitch? other) =>
-        throw new NotImplementedException();
+      _value.CompareTo(other?._value);
 
-    public override bool Equals(object? o) =>
-        throw new NotImplementedException();
+    public override bool Equals(object? o) {
+      if (o is not Pitch) return false;
+      return Equals((Pitch)o);
+    }
 
     public bool Equals(Pitch? other) =>
-        throw new NotImplementedException();
+        CompareTo(other) == 0;
 
     public override int GetHashCode() =>
-        throw new NotImplementedException();
+        _value.GetHashCode();
 
     public static Interval operator -(Pitch left, Pitch right) =>
-        throw new NotImplementedException();
+        new(right._value - left._value);
 
     public static Pitch operator +(Pitch left, Interval right) =>
-        throw new NotImplementedException();
+        new(left._value + right.Size);
 
     public static bool operator >(Pitch left, Pitch right) =>
-        throw new NotImplementedException();
+        left.CompareTo(right) > 0;
 
     public static bool operator <(Pitch left, Pitch right) =>
-        throw new NotImplementedException();
+        left.CompareTo(right) < 0;
 
     public static bool operator >=(Pitch left, Pitch right) =>
-        throw new NotImplementedException();
+        left.CompareTo(right) >= 0;
 
     public static bool operator <=(Pitch left, Pitch right) =>
-        throw new NotImplementedException();
+        left.CompareTo(right) <= 0;
 
     public static bool operator ==(Pitch left, Pitch right) =>
-        throw new NotImplementedException();
+        left.CompareTo(right) == 0;
 
     public static bool operator !=(Pitch left, Pitch right) =>
-        throw new NotImplementedException();
+        left.CompareTo(right) != 0;
   }
 }
