@@ -8,36 +8,38 @@
         _value = value;
 
     public Interval Absolute() =>
-        throw new NotImplementedException();
+        new(Math.Abs(_value));
 
     public int CompareTo(Interval? other) =>
-        throw new NotImplementedException();
+        _value.CompareTo(other?._value);
 
-    public override bool Equals(object? obj) =>
-        throw new NotImplementedException();
+    public override bool Equals(object? obj) {
+      if (obj is not Interval) return false;
+      return Equals((Interval)obj);
+    }
 
     public bool Equals(Interval? other) =>
-        throw new NotImplementedException();
+        CompareTo(other) == 0;
 
     public override int GetHashCode() =>
-        throw new NotImplementedException();
+        _value.GetHashCode();
 
     public static bool operator >(Interval left, Interval right) =>
-        throw new NotImplementedException();
+        left.CompareTo(right) > 0;
 
     public static bool operator <(Interval left, Interval right) =>
-        throw new NotImplementedException();
+        left.CompareTo(right) < 0;
 
     public static bool operator >=(Interval left, Interval right) =>
-        throw new NotImplementedException();
+        left.CompareTo(right) >= 0;
 
     public static bool operator <=(Interval left, Interval right) =>
-        throw new NotImplementedException();
+        left.CompareTo(right) <= 0;
 
     public static bool operator ==(Interval left, Interval right) =>
-        throw new NotImplementedException();
+        left.CompareTo(right) == 0;
 
     public static bool operator !=(Interval left, Interval right) =>
-        throw new NotImplementedException();
+        left.CompareTo(right) != 0;
   }
 }
