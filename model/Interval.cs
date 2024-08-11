@@ -1,5 +1,5 @@
 ﻿namespace tunelint.model {
-  internal class Interval :
+  public class Interval :
         IComparable<Interval>,
         IEquatable<Interval> {
     private readonly int _value;
