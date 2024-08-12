@@ -10,6 +10,9 @@
     public int CompareTo(Pitch? other) =>
       _value.CompareTo(other?._value);
 
+    public override string ToString() =>
+      $"Pitch {_value}";
+
     public override bool Equals(object? o) {
       if (o is not Pitch) return false;
       return Equals((Pitch)o);
@@ -22,7 +25,7 @@
         _value.GetHashCode();
 
     public static Interval operator -(Pitch left, Pitch right) =>
-        new(right._value - left._value);
+        new(left._value - right._value);
 
     public static Pitch operator +(Pitch left, Interval right) =>
         new(left._value + right.Size);
