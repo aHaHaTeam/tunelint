@@ -1,15 +1,15 @@
 ﻿namespace tunelint.model {
   internal class Note {
     private readonly NaturalOctavedNote _baseNote;
-    private readonly Duration _baseDuration;
+    private readonly NoteValue _noteValue;
     private readonly Accidental? _accidental;
     public NaturalOctavedNote BaseNote => _baseNote;
-    public Duration BaseDuration => _baseDuration;
+    public NoteValue NoteValue => _noteValue;
     public Accidental? Accidental => _accidental;
 
-    public Note(NaturalOctavedNote baseNote, Duration duration, Accidental? accidental = null) {
+    public Note(NaturalOctavedNote baseNote, NoteValue noteValue, Accidental? accidental = null) {
       _baseNote = baseNote;
-      _baseDuration = duration;
+      _noteValue = noteValue;
       _accidental = accidental;
     }
   }

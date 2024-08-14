@@ -11,7 +11,7 @@
     public ActualNote(int index, Note prototype, Accidental accidental) {
       _index = index;
       _pitch = prototype.BaseNote.Pitch + accidental.Offset;
-      _duration = prototype.BaseDuration;
+      _duration = prototype.NoteValue.Duration;
     }
   }
 }
