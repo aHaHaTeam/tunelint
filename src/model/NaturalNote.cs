@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace tunelint.model {
-  internal class NaturalNote {
+  public class NaturalNote {
     private readonly Pitch _pitch;
 
     public static NaturalNote C => new(0);

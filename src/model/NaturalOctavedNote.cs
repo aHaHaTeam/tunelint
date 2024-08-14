@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace tunelint.model {
-  internal class NaturalOctavedNote {
+  public class NaturalOctavedNote {
     private readonly NaturalNote _naturalNote;
     private readonly Octave _octave;
 
