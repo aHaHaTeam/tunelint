@@ -3,7 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35122.118
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tunelint", "tunelint.csproj", "{2E5FE25A-19FB-4F9B-8F6D-45F2D61CC580}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "test", "test\test.csproj", "{E7AD102C-6C48-4119-8E76-AFDF76A1B048}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A770560F-79BC-4B43-9997-24C8E706FCCE} = {A770560F-79BC-4B43-9997-24C8E706FCCE}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "tunelint", "src\tunelint.csproj", "{A770560F-79BC-4B43-9997-24C8E706FCCE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +16,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{2E5FE25A-19FB-4F9B-8F6D-45F2D61CC580}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2E5FE25A-19FB-4F9B-8F6D-45F2D61CC580}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2E5FE25A-19FB-4F9B-8F6D-45F2D61CC580}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2E5FE25A-19FB-4F9B-8F6D-45F2D61CC580}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7AD102C-6C48-4119-8E76-AFDF76A1B048}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7AD102C-6C48-4119-8E76-AFDF76A1B048}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7AD102C-6C48-4119-8E76-AFDF76A1B048}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7AD102C-6C48-4119-8E76-AFDF76A1B048}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A770560F-79BC-4B43-9997-24C8E706FCCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A770560F-79BC-4B43-9997-24C8E706FCCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A770560F-79BC-4B43-9997-24C8E706FCCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A770560F-79BC-4B43-9997-24C8E706FCCE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

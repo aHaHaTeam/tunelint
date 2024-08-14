@@ -1,13 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Printing;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace tunelint.model {
-  internal class Octave {
-    private const int _octaveSize = 12;
+﻿namespace tunelint.model {
+  public class Octave {
     private readonly int _number;
 
     public static Octave SubContraOctave => new(-4);
@@ -18,7 +10,7 @@ namespace tunelint.model {
     public static Octave SecondLineOctave => new(1);
     public static Octave ThirdLineOctave => new(2);
     public static Octave FourthLineOctave => new(3);
-    public Interval Offset => new(_number * _octaveSize);
+    public Interval Offset => Interval.Octave * _number;
 
     private Octave(int number) {
       _number = number;
