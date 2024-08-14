@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Printing;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace tunelint.model {
-  internal class Octave {
+﻿namespace tunelint.model {
+  public class Octave {
     private readonly int _number;
 
     public static Octave SubContraOctave => new(-4);
