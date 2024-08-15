@@ -1,7 +1,7 @@
 ﻿using System.Text;
 
 namespace tunelint.model {
-  public class Interval :
+  internal sealed class Interval :
         IComparable<Interval>,
         IEquatable<Interval> {
     private readonly int _value;

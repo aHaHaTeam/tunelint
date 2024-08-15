@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 
 namespace tunelint.model {
-  internal class Melody : IEnumerable<Note> {
+  internal sealed class Melody : IEnumerable<Note> {
     internal class NoteEnumerator : IEnumerator<Note> {
       public NoteEnumerator(Melody melody) {
         throw new NotImplementedException();

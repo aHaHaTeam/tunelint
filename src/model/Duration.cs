@@ -1,5 +1,5 @@
 ﻿namespace tunelint.model {
-  public class Duration :
+  internal sealed class Duration :
       IComparable<Duration>,
       IEquatable<Duration> {
     private readonly int _value; // in 256-th parts of the whole note

@@ -1,5 +1,5 @@
 ﻿namespace tunelint.model {
-  internal class Note {
+  internal sealed class Note {
     private readonly NaturalOctavedNote _baseNote;
     private readonly NoteValue _noteValue;
     private readonly Accidental? _accidental;
