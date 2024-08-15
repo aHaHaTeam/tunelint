@@ -1,5 +1,5 @@
 ﻿namespace tunelint.model {
-  internal class Accidental {
+  internal sealed class Accidental {
     private readonly Interval _offset;
     public Interval Offset => _offset;
 

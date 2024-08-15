@@ -1,5 +1,5 @@
 ﻿namespace tunelint.model {
-  internal class MusicalTime {
+  internal sealed class MusicalTime {
     public int UpperNumber { get; init; }
     public int LowerNumber { get; init; }
   }

@@ -2,7 +2,7 @@
 using tunelint.model.exceptions;
 
 namespace tunelint.model {
-  public class NoteValue {
+  internal sealed class NoteValue {
     private readonly Duration _duration;
     private readonly int _power;
     private readonly int _augmentations;

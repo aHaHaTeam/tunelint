@@ -1,5 +1,5 @@
 ﻿namespace tunelint.model {
-  public class Pitch :
+  internal sealed class Pitch :
         IComparable<Pitch>,
         IEquatable<Pitch> {
     private readonly int _value;

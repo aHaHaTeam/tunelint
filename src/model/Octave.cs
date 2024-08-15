@@ -1,5 +1,5 @@
 ﻿namespace tunelint.model {
-  public class Octave {
+  internal sealed class Octave {
     private readonly int _number;
 
     public static Octave SubContraOctave => new(-4);

@@ -2,7 +2,7 @@ using NUnit.Framework;
 using tunelint.model;
 
 namespace test.model {
-  public class PitchTests {
+  internal class PitchTests {
     private static object[] _compareCases = [
       new object[] { new Pitch(1),  new Pitch(1),  0 },
       new object[] { new Pitch(-1), new Pitch(-1), 0 },

@@ -1,5 +1,5 @@
 ﻿namespace tunelint.model {
-  internal class ActualNote {
+  internal sealed class ActualNote {
     private readonly int _index;
     private readonly Pitch _pitch;
     private readonly Duration _duration;
