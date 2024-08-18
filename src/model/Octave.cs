@@ -12,6 +12,9 @@
     public static Octave FourthLineOctave => new(3);
     public Interval Offset => Interval.Octave * _number;
 
+    public override string ToString()
+      => (_number - SubContraOctave._number).ToString();
+
     private Octave(int number) {
       _number = number;
     }

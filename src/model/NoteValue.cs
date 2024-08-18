@@ -2,14 +2,14 @@
 using tunelint.model.exceptions;
 
 namespace tunelint.model {
-  internal sealed class NoteValue {
+  internal sealed class NoteValue : IEquatable<NoteValue> {
     private readonly Duration _duration;
     private readonly int _power;
     private readonly int _augmentations;
 
     public Duration Duration => _duration;
 
-    private NoteValue(int power, int augmentations = 0) {
+    public NoteValue(int power, int augmentations = 0) {
       if (augmentations < 0) 
         throw new ArgumentOutOfRangeException(
           $"{nameof(augmentations)} should be non negative integer");
@@ -51,6 +51,7 @@ namespace tunelint.model {
     public NoteValue WithAugmentations(int augmentations) =>
       new(_power, augmentations);
 
+
     public static NoteValue OctupleWhole => new(11);
     public static NoteValue QuadrupleWhole => new(10);
     public static NoteValue DoubleWhole => new(9);
@@ -63,5 +64,9 @@ namespace tunelint.model {
     public static NoteValue SixtyFourth => new(2);
     public static NoteValue HundredTwentyEighth => new(1);
     public static NoteValue TwoHundredFiftySixth => new(0);
+
+    public bool Equals(NoteValue? other)
+      => Duration.Equals(other?.Duration);
+
   }
 }
