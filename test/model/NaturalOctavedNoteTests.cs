@@ -25,6 +25,7 @@ namespace test.model {
         new Pitch(28) },
     ];
 
+    [TestCaseSource(nameof(_pitchCases))]
     public void TestPitch(NaturalOctavedNote input, Pitch expected) {
       Assert.That(
         input.Pitch,
