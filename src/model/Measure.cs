@@ -2,7 +2,7 @@
 using tunelint.model.exceptions;
 
 namespace tunelint.model {
-  internal class Measure : IEnumerable<Note>, IEquatable<Measure> {
+  internal sealed class Measure : IEnumerable<Note>, IEquatable<Measure> {
     private readonly MusicalTime _musicalTime;
     private readonly List<Note> _notes;
     private Duration _durationLeft;
