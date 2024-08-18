@@ -1,41 +1,18 @@
-﻿using System.Collections;
-
-namespace tunelint.model {
-  internal sealed class Melody : IEnumerable<Note> {
-    internal class NoteEnumerator : IEnumerator<Note> {
-      public NoteEnumerator(Melody melody) {
-        throw new NotImplementedException();
-      }
-
-      public Note Current => throw new NotImplementedException();
-
-      object IEnumerator.Current => throw new NotImplementedException();
-
-      public void Dispose() {
-      }
-
-      public bool MoveNext() {
-        throw new NotImplementedException();
-      }
-
-      public void Reset() {
-        throw new NotImplementedException();
-      }
-    }
-
+﻿namespace tunelint.model {
+  internal sealed class Melody {
     private readonly MusicalTime _musicalTime;
+    private readonly List<Measure> _measures;
     public MusicalTime MusicalTime => _musicalTime;
-    private List<Note> Notes;
+    public List<Measure> Measures => _measures;
 
     public Melody(MusicalTime time) {
       _musicalTime = time;
-      Notes = [];
+      _measures = [new(_musicalTime)];
     }
 
-    public IEnumerator<Note> GetEnumerator()
-        => throw new NotImplementedException();
-
-    IEnumerator IEnumerable.GetEnumerator()
-        => this.GetEnumerator();
+    public void AddMeasure()
+      => _measures.Add(new(_musicalTime));
+    public void RemoveMeasure()
+      => _measures.RemoveAt(_measures.Count - 1);
   }
 }
