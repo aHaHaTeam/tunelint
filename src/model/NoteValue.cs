@@ -2,7 +2,9 @@
 using tunelint.model.exceptions;
 
 namespace tunelint.model {
-  internal sealed class NoteValue : IEquatable<NoteValue> {
+  internal sealed class NoteValue : 
+    IEquatable<NoteValue>,
+    IComparable<NoteValue> {
     private readonly Duration _duration;
     private readonly int _power;
     private readonly int _augmentations;
@@ -51,7 +53,6 @@ namespace tunelint.model {
     public NoteValue WithAugmentations(int augmentations) =>
       new(_power, augmentations);
 
-
     public static NoteValue OctupleWhole => new(11);
     public static NoteValue QuadrupleWhole => new(10);
     public static NoteValue DoubleWhole => new(9);
@@ -67,6 +68,26 @@ namespace tunelint.model {
 
     public bool Equals(NoteValue? other)
       => Duration.Equals(other?.Duration);
+    public int CompareTo(NoteValue? other)
+      => Duration.CompareTo(other?.Duration);
+    public override bool Equals(object? obj) {
+      if (obj is not  NoteValue) return false;
+      return Equals((NoteValue)obj);
+    }
+    public override int GetHashCode()
+      => Duration.GetHashCode();
 
+    public static bool operator== (NoteValue left, NoteValue right)
+      => left.Equals(right);
+    public static bool operator!= (NoteValue left, NoteValue right)
+      => !left.Equals(right);
+    public static bool operator> (NoteValue left, NoteValue right)
+      => left.CompareTo(right) > 0;
+    public static bool operator <(NoteValue left, NoteValue right)
+      => left.CompareTo(right) < 0;
+    public static bool operator >=(NoteValue left, NoteValue right)
+      => left.CompareTo(right) >= 0;
+    public static bool operator <=(NoteValue left, NoteValue right)
+      => left.CompareTo(right) <= 0;
   }
 }
