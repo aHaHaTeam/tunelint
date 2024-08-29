@@ -21,18 +21,38 @@ namespace test.model {
       new object[] { NoteValue.Eighth.WithAugmentations(3),              "E+3"   },
       new object[] { NoteValue.OctupleWhole.WithAugmentations(7),        "DDD+7" }
     ];
-
     private static readonly object[] _constructorTooMuchAugmentationsCases = [
       new object[] { NoteValue.TwoHundredFiftySixth, 1,  true  },
       new object[] { NoteValue.ThirtySecond,         3,  false },
       new object[] { NoteValue.ThirtySecond,         4,  true  },
       new object[] { NoteValue.OctupleWhole,         11, false }
     ];
-
-    private static readonly object[] _constructorNegatioveAugmentationCases = [
+    private static readonly object[] _constructorNegativeAugmentationCases = [
       new object[] { NoteValue.Half,         0, false },
       new object[] { NoteValue.ThirtySecond, 1, false },
       new object[] { NoteValue.Eighth,      -1, true  }
+    ];
+    private static readonly object[] _compareToTests = [
+      new object[] {
+        NoteValue.Half,
+        NoteValue.Eighth,
+        1 },
+      new object[] {
+        NoteValue.Quater,
+        NoteValue.Whole,
+        -1 },
+      new object[] {
+        NoteValue.Sixteenth.WithAugmentations(4),
+        NoteValue.Eighth,
+        -1 },
+      new object[] {
+        NoteValue.Half.WithAugmentations(4),
+        NoteValue.Half.WithAugmentations(3),
+        1 },
+      new object[] {
+        NoteValue.Half,
+        NoteValue.Half,
+        0 }
     ];
 
     [TestCaseSource(nameof(_toStringCases))]
@@ -55,6 +75,7 @@ namespace test.model {
       }
     }
 
+    [TestCaseSource(nameof(_constructorNegativeAugmentationCases))]
     public void TestConstructorNegativeAugmentations(NoteValue noteValue, int augmentations,
       bool shouldThrow) {
       if (shouldThrow) {
@@ -64,6 +85,12 @@ namespace test.model {
         Assert.DoesNotThrow(()
           => noteValue.WithAugmentations(augmentations));
       }
+    }
+
+    [TestCaseSource(nameof(_compareToTests))]
+    public void TestCompareTo(NoteValue left, NoteValue right, int expected) {
+      int actual = left.CompareTo(right);
+      Assert.That(Util.SameSigns(expected, actual), Is.True);
     }
   }
 }
