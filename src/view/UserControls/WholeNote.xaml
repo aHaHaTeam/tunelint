@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="tunelint.view.UserControls.WholeNote"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:tunelint.view.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="10" d:DesignWidth="10">
+  <Viewbox Stretch="Uniform">
+    <Canvas Height="10" Width="10">
+      <Canvas Canvas.Top="1.5">
+        <Canvas.RenderTransform>
+          <TransformGroup>
+            <TranslateTransform X="-199.3990" Y="-536.4730" />
+          </TransformGroup>
+        </Canvas.RenderTransform>
+        <Path x:Name="Head"
+              Data="M 206.04921,542.89329 C 204.33221,542.80244 202.99047,541.27833 202.45208,539.70226 C 202.12589,538.77722 202.30505,537.38950 203.39174,537.12966 C 204.96615,536.86226 206.27260,538.19967 207.00481,539.47953 C 207.52641,540.42880 207.81478,541.92368 206.83679,542.67615 C 206.60458,542.83188 206.32387,542.89434 206.04921,542.89329 z M 208.78446,537.49000 C 206.85001,536.31510 204.40641,536.22358 202.28813,536.88110 C 200.94630,537.35025 199.41169,538.34823 199.39900,539.97250 C 199.39807,541.56396 200.87900,542.55675 202.18949,543.02959 C 204.26418,543.70824 206.65796,543.64856 208.59501,542.56669 C 209.69149,541.98333 210.66334,540.77535 210.33379,539.43643 C 210.15258,538.57546 209.49304,537.93123 208.78446,537.49000 z "
+              Fill="Black"/>
+      </Canvas>
+    </Canvas>
+  </Viewbox>
+</UserControl>
