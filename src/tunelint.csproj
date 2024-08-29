@@ -10,7 +10,17 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="view\" />
+    <Compile Remove="view\BlackNoteHead.xaml.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Remove="view\BarOfMusicalNotation.xaml" />
+    <Page Remove="view\UpSingleFlag.xaml" />
+    <Page Remove="view\WhiteNotehead.xaml" />
+    <Page Remove="view\WholeNote.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="resources\" />
   </ItemGroup>
 

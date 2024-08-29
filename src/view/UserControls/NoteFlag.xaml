@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="tunelint.view.UserControls.NoteFlag"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:tunelint.view.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="10" d:DesignWidth="10">
+  <Viewbox Stretch="Uniform">
+    <Canvas Height="10" Width="10">
+      <Canvas>
+        <Canvas.RenderTransform>
+          <TransformGroup>
+            <TranslateTransform X="-355.1186" Y="-534.5257" />
+          </TransformGroup>
+        </Canvas.RenderTransform>
+        <Path Name="FlagPath"
+              Data="M 362.52561,545.59100 C 362.55523,547.70041 361.59345,549.72003 360.14610,551.22017 C 359.85055,551.58759 359.04629,552.27401 358.90096,552.17196 C 358.71377,552.04052 359.37760,551.43876 359.71032,551.11874 C 361.17865,549.59402 362.04044,547.42643 361.74674,545.30372 C 361.36799,543.36784 359.78964,541.96920 358.24068,540.89646 C 357.26129,540.22519 356.21650,539.64737 355.11860,539.19400 L 355.11860,534.50500 L 355.64087,534.50670 C 356.05925,536.43346 357.79685,537.93980 359.09566,539.29772 C 360.00232,540.26777 361.07070,541.12502 361.68096,542.33020 C 362.22847,543.32497 362.53043,544.45397 362.52561,545.59100 z "
+              Fill="Black"/>
+      </Canvas>
+    </Canvas>
+  </Viewbox>
+</UserControl>
