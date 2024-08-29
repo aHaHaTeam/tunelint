@@ -361,3 +361,10 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/src/resources/BlackNotehead.svg
+/src/resources/BlackNotehead.xaml
+/src/view/BarOfMusicalNotation.xaml
+/src/view/BlackNoteHead.xaml.cs
+/src/view/UpSingleFlag.xaml
+/src/view/WhiteNotehead.xaml
+/src/view/WholeNote.xaml
