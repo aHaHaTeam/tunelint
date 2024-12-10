@@ -26,7 +26,7 @@ import tunelint.composeapp.generated.resources.quill
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun modeButtons(
+fun ModeButtons(
     vm: RedactorScreenViewModel,
     buttonDiameter: Dp,
     smallPadding: Dp,
